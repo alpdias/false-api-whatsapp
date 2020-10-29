@@ -59,7 +59,6 @@ class FalseAPI():
         driver.get('https://web.whatsapp.com/') 
         
 
-
+# exec
 whatsapp = FalseAPI()
-
 whatsapp.head()
