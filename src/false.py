@@ -23,8 +23,8 @@ class FalseAPI():
         
         # config webdriver
         user_agent = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36'}
-        self.options = webdriver.ChromeOptions()
-        self.options.headless = True
+        self.options = webdriver.FirefoxOptions()
+        #self.options.headless = True
         self.options.add_argument(f'user_agent={user_agent}')
         #self.options.add_argument('--window-size=1366,768')
         self.options.add_argument('--ignore-certificate-errors')
@@ -38,27 +38,12 @@ class FalseAPI():
         self.options.add_argument('--no-sandbox')
         
         # get executable driver
-        self.driver = webdriver.Chrome(executable_path='chromedriver', options=self.options)
+        self.driver = webdriver.Firefox(executable_path='', options=self.options)
         
         # url for driver acess
         self.driver.get('https://web.whatsapp.com/')
         print(self.driver.title)
         
         
-    def head():
-        
-        """
-        -> Browser with head to view actions
-        :return: Actions taken by the driver
-        """
-        
-        # get driver
-        driver = webdriver.Firefox()
-        
-        # url for driver acess
-        driver.get('https://web.whatsapp.com/') 
-        
-
 # exec
-whatsapp = FalseAPI()
-whatsapp.head()
+FalseAPI()
