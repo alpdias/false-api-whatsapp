@@ -8,6 +8,7 @@ Created in 11/2019
 # imported libraries
 import os
 from time import sleep
+from pathlib import Path
 from selenium import webdriver
 
 # ChormeDriver https://chromedriver.chromium.org/
@@ -36,13 +37,15 @@ class FalseAPI():
         self.options.add_argument('--disable-gpu')
         self.options.add_argument('--disable-dev-shm-usage')
         self.options.add_argument('--no-sandbox')
+
+        way = Path('src') # path to geckodriver
+        gecko = way / 'geckodriver' # way to geckodriver
         
         # get executable driver
-        self.driver = webdriver.Firefox(executable_path='', options=self.options)
+        self.driver = webdriver.Firefox(executable_path=gecko, options=self.options)
         
         # url for driver acess
         self.driver.get('https://web.whatsapp.com/')
-        print(self.driver.title)
         
         
 # exec
