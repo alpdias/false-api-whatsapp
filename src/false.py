@@ -10,16 +10,21 @@ import os
 from time import sleep
 from pathlib import Path
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 
 # ChormeDriver https://chromedriver.chromium.org/
 
 class FalseAPI():
+
+    """
+    -> Fake API for sending messages on WhatsApp
+    """
  
     def __init__(self):
     
         """
-        ->
-        :return:
+        -> Initial access function\
+        \n:return: Access to the main page
         """
         
         # config webdriver
@@ -46,7 +51,56 @@ class FalseAPI():
         
         # url for driver acess
         self.driver.get('https://web.whatsapp.com/')
+
+        # waiting for access
+        while True:
+
+            # try to access
+            try:
+                self.driver.find_element_by_xpath('/html/body/div[1]/div/div/div[3]/div/div[1]/div/label').click() # search button
+                break
+            
+            # wait for access
+            except:
+                pass
+
+    def typephrase(self, text, field):
+
+        """
+        -> To type letter by letter\
+        \n:return: The most organic words
+        """
+
+        for letter in text: 
+            
+            field.send_keys(letter) # type the letter in the field
+            sleep(0.09) # input time of each letter
         
+
+    def sendMsg(self, contact, msg, amount=1, temp=0):
+
+        """
+        -> Send the message to a specific contact or group\
+        \n:param contact: Specific contact or group\
+        \n:param msg: Message to send\
+        \n:param amount: Number of messages\
+        \n:param temp: Response time in seconds\
+        \n:return: Sending the message\
+        """
+
+        # research field
+        field = self.driver.find_element_by_xpath('/html/body/div[1]/div/div/div[3]/div/div[1]/div/label/div/div[2]') 
+        field.clear()
+
+        self.typephrase(contact, field) # type the search
+
         
-# exec
-FalseAPI()
+# running the fake API
+exec = FalseAPI()
+
+contact = 'Test Group!'
+message = 'Hello World!!'
+amount = 10
+
+exec.sendMsg(contact, message, amount) # to send simple text messages
+
