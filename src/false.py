@@ -91,8 +91,21 @@ class FalseAPI():
         # research field
         field = self.driver.find_element_by_xpath('/html/body/div[1]/div/div/div[3]/div/div[1]/div/label/div/div[2]') 
         field.clear()
-
         self.typephrase(contact, field) # type the search
+
+        self.driver.find_element_by_xpath(f'//span[@title="{contact}"]').click() # select the chosen contact
+
+        while amount > 0:
+
+            # field for entering text
+            field = self.driver.find_element_by_xpath('/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div[2]/div/div[2]')
+            field.clear()
+
+            self.typephrase(msg, field) # type the entering text
+
+            self.driver.find_element_by_xpath('/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div[3]').click() # send button
+
+            amount -= 1
 
         
 # running the fake API
