@@ -63,7 +63,15 @@ class FalseAPI():
             # wait for access
             except:
                 pass
+        
+        """ 
+        test -->
+        self.options.headless = True
+        self.driver = webdriver.Firefox(executable_path=gecko, options=self.options)
+        <-- test
+        """
 
+        
     def typephrase(self, text, field):
 
         """
