@@ -106,6 +106,8 @@ class FalseAPI():
             self.driver.find_element_by_xpath('/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div[3]').click() # send button
 
             amount -= 1
+            
+            sleep(temp)
 
         
 # running the fake API
@@ -114,6 +116,7 @@ exec = FalseAPI()
 contact = 'Test Group!'
 message = 'Hello World!!'
 amount = 10
+temp = 1
 
-exec.sendMsg(contact, message, amount) # to send simple text messages
+exec.sendMsg(contact, message, amount, temp) # to send simple text messages
 
