@@ -93,7 +93,7 @@ class FalseAPI():
         \n:param msg: Message to send\
         \n:param amount: Number of messages\
         \n:param temp: Response time in seconds\
-        \n:return: Sending the message\
+        \n:return: Sending the message
         """
 
         # research field
