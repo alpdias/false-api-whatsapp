@@ -89,10 +89,10 @@ class FalseAPI():
 
         """
         -> Send the message to a specific contact or group\
-        \n:param contact: Specific contact or group\
-        \n:param msg: Message to send\
-        \n:param amount: Number of messages\
-        \n:param temp: Response time in seconds\
+        \n:param contact: Specific contact or group
+        \n:param msg: Message to send
+        \n:param amount: Number of messages
+        \n:param temp: Response time in seconds
         \n:return: Sending the message
         """
 
