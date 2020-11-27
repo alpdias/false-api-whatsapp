@@ -24,7 +24,7 @@ class FalseAPI():
     
         """
         -> Initial access function\
-        \n:return: Access to the main page
+        \n:return: Access to the main page\
         """
         
         # config webdriver
@@ -64,19 +64,15 @@ class FalseAPI():
             except:
                 pass
         
-        """ 
-        test -->
         self.options.headless = True
         self.driver = webdriver.Firefox(executable_path=gecko, options=self.options)
-        <-- test
-        """
-
         
+
     def typephrase(self, text, field):
 
         """
         -> To type letter by letter\
-        \n:return: The most organic words
+        \n:return: The most organic words\
         """
 
         for letter in text: 
@@ -89,11 +85,11 @@ class FalseAPI():
 
         """
         -> Send the message to a specific contact or group\
-        \n:param contact: Specific contact or group
-        \n:param msg: Message to send
-        \n:param amount: Number of messages
-        \n:param temp: Response time in seconds
-        \n:return: Sending the message
+        \n:param contact: Specific contact or group\
+        \n:param msg: Message to send\
+        \n:param amount: Number of messages\
+        \n:param temp: Response time in seconds\
+        \n:return: Sending the message\
         """
 
         # research field
