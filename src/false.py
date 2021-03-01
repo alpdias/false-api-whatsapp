@@ -12,8 +12,6 @@ from pathlib import Path
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-# ChormeDriver https://chromedriver.chromium.org/
-
 class FalseAPI():
 
     """
@@ -27,7 +25,7 @@ class FalseAPI():
         \n:return: Access to the main page\
         """
         
-        # config webdriver
+        # config webdriver -->
         user_agent = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36'}
         self.options = webdriver.FirefoxOptions()
         #self.options.headless = True
@@ -42,6 +40,7 @@ class FalseAPI():
         self.options.add_argument('--disable-gpu')
         self.options.add_argument('--disable-dev-shm-usage')
         self.options.add_argument('--no-sandbox')
+        # config webdriver <--
 
         way = Path('src') # path to geckodriver
         gecko = way / 'geckodriver' # way to geckodriver
@@ -114,10 +113,12 @@ class FalseAPI():
 # running the fake API
 exec = FalseAPI()
 
-contact = 'Test Group!'
+# params -->
+contact = ''
 message = 'Hello World!!'
 amount = 10
 temp = 1
+# params <--
 
 exec.sendMsg(contact, message, amount, temp) # to send simple text messages
 
