@@ -42,7 +42,7 @@ class FalseAPI():
         self.options.add_argument('--no-sandbox')
         # config webdriver <--
 
-        way = Path('src') # path to geckodriver
+        way = Path(r"str") # path to geckodriver
         gecko = way / 'geckodriver' # way to geckodriver
         
         # get executable driver
